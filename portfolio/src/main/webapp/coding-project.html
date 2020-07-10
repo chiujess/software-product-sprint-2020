@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Coding Projects</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="gallery">
+    <div class="nav">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coding-project.html" class="active">Coding Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+    <header class="parallax">
+      <h1>Coding Projects</h1>
+    </header>
+    <main id="main" class="projects">
+      <div id="first" class="card">
+        <img src="images/bb-cover.png" alt="The cover page for A Bacterial Birthday.">
+        <div class="overlay">
+          <div class="info">
+            <h2><a class="yellow-link" href="https://github.com/chiujess/bacterial-birthday" target="_blank" onfocus="show_overlay_gallery(this)">A Bacterial Birthday</a></h2>
+            <h3>Summer 2019</h3>
+            <p>A Bacterial Birthday is a educational children's game written in JavaScript. Our goal for the game is to address the issues of harmful bacteria and basic hygiene in daily lives. Visit my <a class="yellow-link" href="https://github.com/chiujess/bacterial-birthday" target="_blank" onblur="hide_overlay_gallery(this)">GitHub</a> to view the code and play the game!</p>
+          </div>
+        </div>
+      </div>
+      <div id="second" class="card">
+        <img src="images/mdp.png" alt="A preview of GeoStar's user interface.">
+        <div class="overlay">
+          <div class="info">
+            <h2><a class="yellow-link" href="https://mdp.engin.umich.edu/portfolio/satellite-remote/" target="_blank" onfocus="show_overlay_gallery(this)" onblur="hide_overlay_gallery(this)">GeoStar</a></h2>
+            <h3>Jan 2019 - Present</h3>
+            <p>I developed the graphic user interface of GeoStar, a open-source satellite remote data sensing platform. I also implemented image processing functions for satellite images. The software is still under development.</p>
+          </div>
+        </div>
+      </div>
+      <div id="third" class="card">
+        <img src="images/apo.png" alt="Alpha Phi Omega logo">
+        <div class="overlay">
+          <div class="info">
+            <h2><a class="yellow-link" href="http://umich.edu/~gammapi/" target="_blank" onfocus="show_overlay_gallery(this)" onblur="hide_overlay_gallery(this)">Alpha Phi Omega</a></h2>
+            <h3>Fall 2019</h3>
+            <p>Alpha Phi Omega is a community service fraternity with approximately 300 members. Serving as the website chair in the big community, I redesigned the website layout with CSS and JavaScript to make it more modern and accessible.</p>
+          </div>
+        </div>
+      </div>
+      <div id="fourth" class="card">
+        <img src="images/eecs.png" alt="University of Michigan logo">
+        <div class="overlay">
+          <div class="info">
+            <h2><a class="yellow-link" href="mailto:chiujess@umich.edu" onfocus="show_overlay_gallery(this)">Star Wars</a></h2>
+            <h3> February 2019</h3>
+            <p>Star Wars is a EECS281 project where I utilized priority queues to build customized heaps which decides which troops should be deployed on each planet. Due to university honors code regulations, please <a class="yellow-link" href="mailto:chiujess@umich.edu" onblur="hide_overlay_gallery(this)">email</a> me if you want to see the full code.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="code-footer">
+      <ul>
+        <li><a href="mailto:chiujess@umich.edu"><img src="images/email.png" alt="email"></a></li>
+        <li><a href="https://github.com/chiujess/" target="_blank"><img src="images/github.png" alt="Octocat"></a></li>
+        <li><a href="https://www.linkedin.com/in/chiujess0920/" target="_blank"><img id="linkedin" src="images/linkedin-bw.png" alt="linkedin"></a></li>
+      </ul>
+    </footer>
+  </div>
+  </body>
+</html>
