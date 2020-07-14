@@ -12,15 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+fetch('/data').then(response => response.json()).then((json) => {
+    console.log("showColor Function Running...");
+    console.log(json);
+});
+
 /**
- * Adds a random greeting to the page.
+ * Gets a greeting message to the page.
  */
-async function getRandomGreeting() {
+async function getGreeting() {
     const response = await fetch('/data');
     const greeting = await response.text();
     document.getElementById('hello-button').innerText = greeting;
 }
 
+/**
+ * Adds a random greeting to the page.
+ */
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
