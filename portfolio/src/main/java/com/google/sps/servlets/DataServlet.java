@@ -21,18 +21,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import com.google.gson.Gson;
+import com.google.sps.data.Comment;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
+  private Comment content = new Comment();
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // response.setContentType("text/html;");
-    // response.getWriter().println("Hello Jessica Chiu!");
-    String json = convertToJSON();
     response.setContentType("application/json;");
+    String json = new Gson().toJson(content);
     response.getWriter().println(json);
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    ArrayList<String> commentIn = new ArrayList<String>();
+    commentIn = getComment(request);
+    content.setName(commentIn.get(0));
+    content.setText(commentIn.get(1));
+
+    // Redirect back to the HTML page.
+    response.sendRedirect("/blog.html");
   }
 
   private String convertToJSON() {
@@ -43,5 +55,14 @@ public class DataServlet extends HttpServlet {
     // convert ArrayList to JSON
     String json = new Gson().toJson(colors);
     return json;
+  }
+
+  private ArrayList<String> getComment(HttpServletRequest request) {
+      String name = request.getParameter("username");
+      String comment = request.getParameter("comment");
+      ArrayList<String> content = new ArrayList<String>();
+      content.add(name);
+      content.add(comment);
+      return content;
   }
 }

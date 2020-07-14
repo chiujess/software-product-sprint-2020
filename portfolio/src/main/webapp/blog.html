@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getComment()">
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
     <div class="gallery">
     <div class="nav">
@@ -31,6 +31,15 @@
             <h2><a class="yellow-link" href="#" onfocus="show_overlay_gallery(this)">About me</a></h2>
             <h3>Nature Lover</h3>
             <p>I love animals and the nature. This is me hugging onto a huge tree in U of M's Law School Courtyard.</p>
+            <form action="/data" method="POST">
+                <label>Name</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label>Comment</label><br>
+                <input type="text" id="comment" name="comment"><br>
+                <input type="submit" value="Add comment">
+            </form>
+            <ul id="nature-comments">
+            </ul>
           </div>
         </div>
       </div>

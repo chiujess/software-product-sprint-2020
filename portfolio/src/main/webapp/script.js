@@ -12,10 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-fetch('/data').then(response => response.json()).then((json) => {
-    console.log("showColor Function Running...");
-    console.log(json);
-});
+function getComment() {
+    fetch('/data').then(response=>response.json()).then((comment) => {
+        const commentBox = document.getElementById("nature-comments");
+        console.log(comment);
+        commentBox.appendChild(createComment(comment.name, comment.text));
+    });
+}
+
+function createComment(nameIn, textIn) {
+    const liElement = document.createElement('li');
+    var fullComment = nameIn.concat(": ", textIn);
+    liElement.innerText = fullComment;
+    return liElement;
+}
 
 /**
  * Gets a greeting message to the page.
