@@ -15,6 +15,12 @@
 /**
  * Adds a random greeting to the page.
  */
+async function getRandomGreeting() {
+    const response = await fetch('/data');
+    const greeting = await response.text();
+    document.getElementById('hello-button').innerText = greeting;
+}
+
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
