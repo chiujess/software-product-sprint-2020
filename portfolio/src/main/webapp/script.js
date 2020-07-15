@@ -12,6 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+function getComment() {
+    fetch('/data').then(response=>response.json()).then((comment) => {
+        const commentBox = document.getElementById("nature-comments");
+        console.log(comment);
+        commentBox.appendChild(createComment(comment.name, comment.text));
+    });
+}
+
+function createComment(nameIn, textIn) {
+    const liElement = document.createElement('li');
+    var fullComment = nameIn.concat(": ", textIn);
+    liElement.innerText = fullComment;
+    return liElement;
+}
+
+/**
+ * Gets a greeting message to the page.
+ */
+async function getGreeting() {
+    const response = await fetch('/data');
+    const greeting = await response.text();
+    document.getElementById('hello-button').innerText = greeting;
+}
+
 /**
  * Adds a random greeting to the page.
  */

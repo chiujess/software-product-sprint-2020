@@ -288,6 +288,11 @@ input[type=submit]:hover {
   grid-column: 1 / -1;
   grid-row: 4 / span 1;
 }
+
+#nature-comments {
+    background-color: #272727;
+    list-style-type: none;
+}
 @media screen and (min-width: 600px) {
   .column {
     -ms-flex: 33.333%; /* IE10 */
