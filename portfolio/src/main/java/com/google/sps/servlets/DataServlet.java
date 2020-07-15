@@ -22,6 +22,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.sps.data.Comment;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
@@ -42,6 +45,13 @@ public class DataServlet extends HttpServlet {
     commentIn = getComment(request);
     content.setName(commentIn.get(0));
     content.setText(commentIn.get(1));
+
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("name", content.getName());
+    commentEntity.setProperty("text", content.getText());
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(commentEntity);
 
     // Redirect back to the HTML page.
     response.sendRedirect("/blog.html");
