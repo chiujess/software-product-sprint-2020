@@ -36,4 +36,10 @@ public class Comment {
   public void setText(String textIn) {
       text = textIn;
   }
+  public String getName() {
+      return name;
+  }
+  public String getText() {
+      return text;
+  }
 }
